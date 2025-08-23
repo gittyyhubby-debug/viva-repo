@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+
+    <welcome-file-list>
+        <welcome-file>index.jsp</welcome-file>
+    </welcome-file-list>
+
+    <!-- Add to Cart -->
+    <servlet>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <servlet-class>com.example.Business.billing.AddToCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>AddToCartServlet</servlet-name>
+        <url-pattern>/Cashier/add-to-cart</url-pattern>
+    </servlet-mapping>
+
+    <!-- Checkout -->
+    <servlet>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>com.example.Business.billing.CheckoutServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <url-pattern>/Cashier/checkout</url-pattern>
+    </servlet-mapping>
+
+    <!-- Register Customer -->
+    <servlet>
+        <servlet-name>CustomerRegisterServlet</servlet-name>
+        <servlet-class>com.example.Business.customer.CustomerCreateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerRegisterServlet</servlet-name>
+        <url-pattern>/Cashier/register-customer</url-pattern>
+    </servlet-mapping>
+
+    <!-- ❌ Remove Single Cart Item -->
+    <servlet>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <servlet-class>com.example.Business.billing.RemoveCartItemServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>RemoveCartItemServlet</servlet-name>
+        <url-pattern>/Cashier/remove-item</url-pattern>
+    </servlet-mapping>
+
+    <!-- 🗑️ Clear Entire Cart -->
+    <servlet>
+        <servlet-name>ClearCartServlet</servlet-name>
+        <servlet-class>com.example.Business.billing.ClearCartServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ClearCartServlet</servlet-name>
+        <url-pattern>/Cashier/clear-cart</url-pattern>
+    </servlet-mapping>
+
+    <!-- Customer List Servlet -->
+    <servlet>
+        <servlet-name>CustomerListServlet</servlet-name>
+        <servlet-class>com.example.Business.customer.CustomerListServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>CustomerListServlet</servlet-name>
+        <url-pattern>/Cashier/customers</url-pattern>
+    </servlet-mapping>
+
+    <!-- Edit Customer (GET form) -->
+    <servlet>
+        <servlet-name>CustomerEditServlet</servlet-name>
+        <servlet-class>com.example.Business.customer.CustomerEditServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerEditServlet</servlet-name>
+        <url-pattern>/Cashier/edit-customer</url-pattern>
+    </servlet-mapping>
+
+    <!-- Update Customer (POST) -->
+    <servlet>
+        <servlet-name>CustomerUpdateServlet</servlet-name>
+        <servlet-class>com.example.Business.customer.CustomerUpdateServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerUpdateServlet</servlet-name>
+        <url-pattern>/Cashier/update-customer</url-pattern>
+    </servlet-mapping>
+
+    <!-- Delete Customer (GET) -->
+    <servlet>
+        <servlet-name>CustomerDeleteServlet</servlet-name>
+        <servlet-class>com.example.Business.customer.CustomerDeleteServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CustomerDeleteServlet</servlet-name>
+        <url-pattern>/Cashier/delete-customer</url-pattern>
+    </servlet-mapping>
+
+
+
+
+</web-app>
